@@ -1,13 +1,13 @@
 
-	<div class="card" style="width: 18rem;">
-  <img src="../../../public/assets/img/blue.png" class="card-img-top" alt="burger">
-  <div class="card-body">
-    <h5 class="card-title">{{burger_name}}</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-	<button class="btn btn-primary eat" data-id="{{id}}" data-eating="{{devoured}}">
+<div class="card eat" data-id="{{id}}" data-eating="{{devoured}}"> 
+  <img src="https://github.com/aarondig/burgerEater/blob/main/public/assets/img/blue.png?raw=true" id="img" class="card-img-top" alt="burger" data-id="{{id}}" data-eating="{{devoured}}">
+  <div class="overlay">
+    <h5 class="text" style="text-transform: uppercase;">{{burger_name}}</h5>
+    <p class="card-text"></p>
+	{{!-- <button class="btn btn-primary eat" data-id="{{id}}" data-eating="{{devoured}}">
 		{{#if devoured}}Eat Burger!{{/if}}
-	</button>
-    {{!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
+	</button> --}}
+    
   </div>
 </div>
 	

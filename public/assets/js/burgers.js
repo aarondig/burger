@@ -35,7 +35,9 @@ $(function() {
             data: newBurger
         }).then(
             function() {
-                console.log("created ne");
+                var imgs = new Array("https://github.com/aarondig/burgerEater/blob/main/public/assets/img/brown.png?raw=true", "https://github.com/aarondig/burgerEater/blob/main/public/assets/img/lightgreen.png?raw=true", "https://github.com/aarondig/burgerEater/blob/main/public/assets/img/cheeseburger.png?raw=true", "https://github.com/aarondig/burgerEater/blob/main/public/assets/img/blue.png?raw=true");
+                var randomimg = Math.floor(Math.random() * imgs.length);
+                document.getElementById("img").src = imgs[randomimg];
                 // Reload the page to get the updated list
                 location.reload();
             }
@@ -56,4 +58,20 @@ $(function() {
     //         }
     //     );
     // });
+    var burgAmount = document.getElementById("img");
+
+    // for (i = 0, i < burgAmount.length; i++){
+
+    // }
+
+    // window.onload = random;
+    // console.log(document.getElementById("img"));
+
+    // function random() {
+    //     var imgs = new Array("https://github.com/aarondig/burgerEater/blob/main/public/assets/img/brown.png?raw=true", "https://github.com/aarondig/burgerEater/blob/main/public/assets/img/lightgreen.png?raw=true", "https://github.com/aarondig/burgerEater/blob/main/public/assets/img/cheeseburger.png?raw=true", "https://github.com/aarondig/burgerEater/blob/main/public/assets/img/blue.png?raw=true");
+    //     var randomimg = Math.floor(Math.random() * imgs.length);
+    //     document.getElementsByClassName("card-img-top").src = imgs[randomimg];
+
+    // }
+
 });

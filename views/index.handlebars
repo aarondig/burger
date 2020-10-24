@@ -1,43 +1,49 @@
 
     <div class="site-wrapper">
 
-      <div class="site-wrapper-inner">
+      <div class="site-wrapper-inner"style="vertical-align:middle;">
 
         <div class="container">
 
           <div class="inner cover">
+            
             <h1 class="cover-heading">BURGERS</h1>
-            <p class="lead">CREATE</p>
+            <div class="container"style="padding-bottom:70px">
+              <div class="row">
+                <div class="col">
+                  <h2>TO EAT</h2>
+                  <div class="card-columns">
+                    {{#each burgers}}
+                      {{#unless devoured}}
+                        {{> burgers/burger-block devoured=true}}
+                      {{/unless}}
+                    {{/each}}
+                  </div>
+                </div>
+                <div class="col">
+                  <h2>EATEN</h2>
+                   <div class="card-columns  d-flex flex-row-reverse">
+                    {{#each burgers}}
+                      {{#if devoured}}
+                        {{> burgers/burger-block devoured=false}}
+                      {{/if}}
+                    {{/each}}
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row" style="width: 100%;">
+                <div class="col">
+              <p class="lead">CREATE</p>
             <form class="create-form" action="/api/burgers" method="POST">
               <div class="form-group">
                 <input type="text" class="form-control" id="burger" name="burger_name" placeholder="Enter Burger Name">
               </div>
               <button class="btn btn-lg btn-outline-light" type="submit">Create Burger</button>
             </form>
-
-
-            <div class="card-deck">
-              {{#each burgers}}
-                {{#unless devoured}}
-                  {{> burgers/burger-block devoured=true}}
-                {{/unless}}
-              {{/each}}
-            </div>
-
-            <h2>BURGERS that are sleepy!</h2>
-
-            <ul>
-              {{#each burgers}}
-                {{#if devoured}}
-                  {{> burgers/burger-block devoured=false}}
-                {{/if}}
-              {{/each}}
-            </ul>
-
-            <h2>Add a Burger</h2>
-          </div>
-
         </div>
+       </div>
+      </div>
 
       </div>
 
